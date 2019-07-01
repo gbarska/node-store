@@ -4,7 +4,7 @@ const app = require('../src/app');
 const debug = require('debug')('nodestr:server');
 const http = require('http');
 
-const port = normalizePort(process.env.PORT || '3000');
+const port = normalizePort(process.env.PORT || '3003');
 app.set('port',port);
 
 const server = http.createServer(app);
@@ -13,7 +13,7 @@ const server = http.createServer(app);
 server.listen(port);
 server.on('error',onError);
 server.on('listening', onListening);
-console.log('Listening on port 3000...');
+console.log('Listening on port 3003...');
 
 //normalizando a porta da aplicacao para rodar no servidor
 function normalizePort(val){

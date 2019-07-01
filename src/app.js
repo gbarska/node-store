@@ -2,9 +2,16 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
 const router = express.Router();
+
+//conecta ao banco
+mongoose.connect('mongodb+srv://gbarska:Passw0rd@cluster0-gawmy.azure.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true});
+
+//carregar os models
+const Product = require('./models/product');
 
 //carregar as Rotas
 const indexRoute = require('./routes/index');
