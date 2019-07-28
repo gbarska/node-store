@@ -12,10 +12,13 @@ mongoose.connect('mongodb+srv://gbarska:Passw0rd@cluster0-gawmy.azure.mongodb.ne
 
 //carregar os models
 const Product = require('./models/product');
+const Customer = require('./models/customer');
+const Order = require('./models/order');
 
 //carregar as Rotas
 const indexRoute = require('./routes/index');
 const productsRoute = require('./routes/products');
+const customerRoute = require('./routes/customers');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -24,5 +27,7 @@ app.use(bodyParser.urlencoded({
 
 app.use('/',indexRoute);
 app.use('/products',productsRoute);
+app.use('/customers',customerRoute);
+
 
 module.exports = app;
